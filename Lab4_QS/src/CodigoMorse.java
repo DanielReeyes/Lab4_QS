@@ -3,12 +3,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class CodigoMorse {
-private HashMap<String, String> mapa;
+public class CodigoMorse extends Dicionario{
 
     public CodigoMorse() {
-        this.mapa = new HashMap<String, String>();
-        this.inicializaTabela();
+        super();        
     }
 
     public void inicializaTabela() {
@@ -51,10 +49,10 @@ private HashMap<String, String> mapa;
         this.mapa.put("0", "-----");
     }
 
-    private String retornaCodigo(String sLetra) {
+    //private String retornaCodigo(String sLetra) {
 
-        return this.mapa.get(sLetra);
-    }
+    //    return this.mapa.get(sLetra);
+    //}
 
     private String retornaValor(String sCodigo) {
 
