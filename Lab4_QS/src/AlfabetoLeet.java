@@ -8,6 +8,7 @@ public class AlfabetoLeet extends Dicionario{
         super();
     }
 
+    @Override
     public void inicializaTabela() {
         //key, value
         this.mapa.put("A", "@");

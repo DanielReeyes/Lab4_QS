@@ -19,7 +19,7 @@ public abstract class Dicionario {
         this.mapa = new HashMap<String, String>();
         inicializaTabela();
     }
-    
+
     abstract public void inicializaTabela();
     
     public String retornaCodigo(String sLetra) {
