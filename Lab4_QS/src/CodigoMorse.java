@@ -48,25 +48,9 @@ public class CodigoMorse extends Dicionario{
         this.mapa.put("9", "----.");
         this.mapa.put("0", "-----");
     }
-
-    //private String retornaCodigo(String sLetra) {
-
-    //    return this.mapa.get(sLetra);
-    //}
-
-    private String retornaValor(String sCodigo) {
-
-        for (Map.Entry<String, String> entry : mapa.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-
-            if (value.equals(sCodigo)) {
-                return key;
-            }
-        }
-        return null;
-    }
-
+    
+    
+    @Override
     public String codificaMensagem(String msg) {
         String result = "";
         char vMsg[] = msg.toCharArray();
@@ -80,6 +64,7 @@ public class CodigoMorse extends Dicionario{
         return result.trim();
     }
 
+    @Override
     public String decodificaMensagem(String msgCodificada) {
         String result = "";
         String vPalavras[] = msgCodificada.split("   ");

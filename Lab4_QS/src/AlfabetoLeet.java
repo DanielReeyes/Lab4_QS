@@ -2,13 +2,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class AlfabetoLeet {
-
-    private HashMap<String, String> mapa;
+public class AlfabetoLeet extends Dicionario{
 
     public AlfabetoLeet() {
-        this.mapa = new HashMap<String, String>();
-        this.inicializaTabela();
+        super();
     }
 
     public void inicializaTabela() {
@@ -41,24 +38,7 @@ public class AlfabetoLeet {
         this.mapa.put("Z", "%");
     }
 
-    private String retornaCodigo(String sLetra) {
-
-        return this.mapa.get(sLetra);
-    }
-
-    private String retornaValor(String sCodigo) {
-
-        for (Map.Entry<String, String> entry : mapa.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-
-            if (value.equals(sCodigo)) {
-                return key;
-            }
-        }
-        return null;
-    }
-
+    @Override
     public String codificaMensagem(String msg) {
         String result = "";
         char vMsg[] = msg.toCharArray();
@@ -71,7 +51,8 @@ public class AlfabetoLeet {
         }
         return result.trim();
     }
-
+    
+    @Override
     public String decodificaMensagem(String msgCodificada) {
         String result = "";
         String vPalavras[] = msgCodificada.split("    ");
