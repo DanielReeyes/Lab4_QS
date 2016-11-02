@@ -28,16 +28,18 @@ public abstract class Dicionario {
     }
     
     public String retornaValor(String sCodigo) {
-
+        String resposta = "";
         for (Map.Entry<String, String> entry : mapa.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
 
             if (value.equals(sCodigo)) {
-                return key;
+                resposta = key;
+                //return key;
+                return resposta;
             }
         }
-        return null;
+        return resposta;
     }
     
     abstract public String decodificaMensagem(String msgCodificada);

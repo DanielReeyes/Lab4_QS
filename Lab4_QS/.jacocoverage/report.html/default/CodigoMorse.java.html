@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>CodigoMorse.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Lab4_QS&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">CodigoMorse.java</span></div><h1>CodigoMorse.java</h1><pre class="source lang-java linenums">
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class CodigoMorse extends Dicionario{
+
+    public CodigoMorse() {
+<span class="fc" id="L9">        super();        </span>
+<span class="fc" id="L10">    }</span>
+
+    @Override
+    public void inicializaTabela() {
+        //key, value
+<span class="fc" id="L15">        this.mapa.put(&quot;A&quot;, &quot;.-&quot;);</span>
+<span class="fc" id="L16">        this.mapa.put(&quot;B&quot;, &quot;-...&quot;);</span>
+<span class="fc" id="L17">        this.mapa.put(&quot;C&quot;, &quot;-.-.&quot;);</span>
+<span class="fc" id="L18">        this.mapa.put(&quot;D&quot;, &quot;-..&quot;);</span>
+<span class="fc" id="L19">        this.mapa.put(&quot;E&quot;, &quot;.&quot;);</span>
+<span class="fc" id="L20">        this.mapa.put(&quot;F&quot;, &quot;..-.&quot;);</span>
+<span class="fc" id="L21">        this.mapa.put(&quot;G&quot;, &quot;--.&quot;);</span>
+<span class="fc" id="L22">        this.mapa.put(&quot;H&quot;, &quot;....&quot;);</span>
+<span class="fc" id="L23">        this.mapa.put(&quot;I&quot;, &quot;..&quot;);</span>
+<span class="fc" id="L24">        this.mapa.put(&quot;J&quot;, &quot;.---&quot;);</span>
+<span class="fc" id="L25">        this.mapa.put(&quot;K&quot;, &quot;-.-&quot;);</span>
+<span class="fc" id="L26">        this.mapa.put(&quot;L&quot;, &quot;.-..&quot;);</span>
+<span class="fc" id="L27">        this.mapa.put(&quot;M&quot;, &quot;--&quot;);</span>
+<span class="fc" id="L28">        this.mapa.put(&quot;N&quot;, &quot;-.&quot;);</span>
+<span class="fc" id="L29">        this.mapa.put(&quot;O&quot;, &quot;---&quot;);</span>
+<span class="fc" id="L30">        this.mapa.put(&quot;P&quot;, &quot;.--.&quot;);</span>
+<span class="fc" id="L31">        this.mapa.put(&quot;Q&quot;, &quot;--.-&quot;);</span>
+<span class="fc" id="L32">        this.mapa.put(&quot;R&quot;, &quot;.-.&quot;);</span>
+<span class="fc" id="L33">        this.mapa.put(&quot;S&quot;, &quot;...&quot;);</span>
+<span class="fc" id="L34">        this.mapa.put(&quot;T&quot;, &quot;-&quot;);</span>
+<span class="fc" id="L35">        this.mapa.put(&quot;U&quot;, &quot;..-&quot;);</span>
+<span class="fc" id="L36">        this.mapa.put(&quot;V&quot;, &quot;...-&quot;);</span>
+<span class="fc" id="L37">        this.mapa.put(&quot;W&quot;, &quot;.--&quot;);</span>
+<span class="fc" id="L38">        this.mapa.put(&quot;X&quot;, &quot;-..-&quot;);</span>
+<span class="fc" id="L39">        this.mapa.put(&quot;Y&quot;, &quot;-.--&quot;);</span>
+<span class="fc" id="L40">        this.mapa.put(&quot;Z&quot;, &quot;--..&quot;);</span>
+<span class="fc" id="L41">        this.mapa.put(&quot;1&quot;, &quot;.----&quot;);</span>
+<span class="fc" id="L42">        this.mapa.put(&quot;2&quot;, &quot;..---&quot;);</span>
+<span class="fc" id="L43">        this.mapa.put(&quot;3&quot;, &quot;...--&quot;);</span>
+<span class="fc" id="L44">        this.mapa.put(&quot;4&quot;, &quot;....-&quot;);</span>
+<span class="fc" id="L45">        this.mapa.put(&quot;5&quot;, &quot;.....&quot;);</span>
+<span class="fc" id="L46">        this.mapa.put(&quot;6&quot;, &quot;-....&quot;);</span>
+<span class="fc" id="L47">        this.mapa.put(&quot;7&quot;, &quot;--...&quot;);</span>
+<span class="fc" id="L48">        this.mapa.put(&quot;8&quot;, &quot;---..&quot;);</span>
+<span class="fc" id="L49">        this.mapa.put(&quot;9&quot;, &quot;----.&quot;);</span>
+<span class="fc" id="L50">        this.mapa.put(&quot;0&quot;, &quot;-----&quot;);</span>
+<span class="fc" id="L51">    }</span>
+    
+    
+    @Override
+    public String codificaMensagem(String msg) {
+<span class="fc" id="L56">        String result = &quot;&quot;;</span>
+<span class="fc" id="L57">        char vMsg[] = msg.toCharArray();</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (int i = 0; i &lt; vMsg.length; i++) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            if (vMsg[i] == ' ') {</span>
+<span class="fc" id="L60">                result = result + &quot;  &quot;;</span>
+            } else {
+<span class="fc" id="L62">                result = result + retornaCodigo(String.valueOf(vMsg[i])) + &quot; &quot;;</span>
+            }
+        }
+<span class="fc" id="L65">        return result.trim();</span>
+    }
+
+    @Override
+    public String decodificaMensagem(String msgCodificada) {
+<span class="fc" id="L70">        String result = &quot;&quot;;</span>
+<span class="fc" id="L71">        String vPalavras[] = msgCodificada.split(&quot;   &quot;);</span>
+        String vMsgCodificada[];
+
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        for (int j = 0; j &lt; vPalavras.length; j++) {</span>
+<span class="fc" id="L75">            vMsgCodificada = vPalavras[j].split(&quot; &quot;);</span>
+
+<span class="fc bfc" id="L77" title="All 2 branches covered.">            for (int i = 0; i &lt; vMsgCodificada.length; i++) {</span>
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">                if (!vMsgCodificada[i].equals(&quot; &quot;)) {</span>
+<span class="fc" id="L79">                    result = result + retornaValor(vMsgCodificada[i]);</span>
+                }
+            }
+<span class="fc" id="L82">            result = result + &quot; &quot;;</span>
+        }
+<span class="fc" id="L84">        return result.trim();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
